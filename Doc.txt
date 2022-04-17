@@ -1,0 +1,29 @@
+Document 
+
+-boolean init()
+Use to connect to database
+Return true if connect success,else false
+
+-boolean insert(String username,String password,String email)
+Use to insert user's data(username,password,role=1,email) into database (table=people) 
+Return true if insert success,else false
+
+-boolean delete(String username)
+Use to delete {username}'s data from database(table=people)
+Return true if delete success,else false
+
+-HashMap<String,String> find(String username)
+Use to find and get {username}'s data (username,password,role,email) from database(table=people)
+Return data(Hashmap<String,String> obj that key is username,password,role,email and its value respectivly,else null 
+
+-boolean insertImg(String path,String imgname)
+Use to insert img into database(table=img),{path} is pathway to image you want to insert,{imgname} is name you want to give to this image in database
+Return true if insert success,else false
+
+-boolean getImg(String path,String imgname,String imgtype)  
+Use to get image from database(table=img) and store in your {path},if path = "none" will auto direct to "System.getProperty(\"user.home\")" + File.separator + "\"testimg\""
+	imgname is name of image you want in database,imgtype is type of image(jpg,png,etc)
+Return true if get image and store in {path} success,else false
+
+-Connection getCon()
+Use to get Connection variable that link to database
