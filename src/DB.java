@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.HashMap;  
 
-public class DB
+abstract public class DB
 {
     String table;
     Connection connection;
@@ -84,10 +84,10 @@ public class DB
         }
     }
 
-    public boolean update(String col,String keyword,String input){
+    public boolean update(String colkey,String keyword,String colin,String input){
         try{
             Statement stmt = this.connection.createStatement();
-            String query =  "update " + this.table + " set " + col + " = '" + input + "' where " + col + " = '" + keyword + "'" ;
+            String query =  "update " + this.table + " set " + colin + " = '" + input + "' where " + colkey + " = '" + keyword + "'" ;
             int rs = stmt.executeUpdate(query);
             if(rs > 0){
                 return true;
@@ -99,6 +99,8 @@ public class DB
             return false;
         }
     }
+
+    public abstract boolean insert(HashMap<String,String> row);
 
     public Connection getCon()
     {

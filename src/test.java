@@ -5,7 +5,7 @@
 
 public class test {
     public static void main(String[] args) {
-        DB db = new DB("people");
+        //DB db = new DB("people");
 
         // Test delete
         //db.delete("username", "pokemon");
